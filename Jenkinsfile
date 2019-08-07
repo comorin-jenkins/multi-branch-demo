@@ -8,7 +8,7 @@ void setBuildStatus(String message, String state) {
   ]);
 }
 pipeline {
-     agent {label 'build'}
+     agent any
      stages {
           stage("checkout"){
               steps {
