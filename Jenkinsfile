@@ -17,7 +17,7 @@ pipeline {
           }
           stage("result") {
               steps {
-                  sh "script.sh"
+                  sh "./script.sh"
               }
           }
       }
