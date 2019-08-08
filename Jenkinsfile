@@ -20,6 +20,12 @@ pipeline {
                   sh "./script.sh"
               }
           }
+       
+          stage("deploy") {
+              steps {
+                when { allOf { branch 'feature'; environment name: 'DEPLOY_TO', value: 'production' } }
+              }
+          }
       }
       post {
          success {
