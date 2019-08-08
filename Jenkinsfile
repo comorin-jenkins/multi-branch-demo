@@ -23,7 +23,10 @@ pipeline {
        
           stage("deploy") {
               steps {
-                when { allOf { branch 'feature'; environment name: 'DEPLOY_TO', value: 'production' } }
+                when {
+                branch 'feature'
+                environment name: 'DEPLOY_TO', value: 'production'
+                }
               }
           }
       }
