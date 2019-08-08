@@ -25,7 +25,6 @@ pipeline {
               steps {
                   when {
                      branch 'feature'
-                     environment name: 'DEPLOY_TO', value: 'production'
                   }
                   echo "deployed to production"
               }
