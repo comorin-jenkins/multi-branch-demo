@@ -21,12 +21,31 @@ pipeline {
               }
           }
        
-          stage("deploy") {
+          stage("deploy branch feature") {
+              when { branch 'feature/*' }
               steps {
-                  when {
-                     branch 'feature'
-                  }
-                  echo "deployed to production"
+                echo "deployed feature branch"
+              }
+          }
+       
+          stage("deploy branch feature") {
+              when { branch 'develop' }
+              steps {
+                echo "deployed develop branch"
+              }
+          }
+       
+          stage("deploy branch feature") {
+              when { branch 'master' }
+              steps {
+                echo "deployed master branch"
+              }
+          }
+       
+          stage("deploy branch feature") {
+              when { buildingTag() }
+              steps {
+                echo "deployed tag"
               }
           }
       }
