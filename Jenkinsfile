@@ -20,6 +20,34 @@ pipeline {
                   sh "./script.sh"
               }
           }
+       
+          stage("deploy branch feature") {
+              when { branch 'feature/*' }
+              steps {
+                echo "deployed feature branch"
+              }
+          }
+       
+          stage("deploy branch develop") {
+              when { branch 'develop' }
+              steps {
+                echo "deployed develop branch"
+              }
+          }
+       
+          stage("deploy branch master") {
+              when { branch 'master' }
+              steps {
+                echo "deployed master branch"
+              }
+          }
+       
+          stage("deploy tag") {
+              when { buildingTag() }
+              steps {
+                echo "deployed tag"
+              }
+          }
       }
       post {
          success {

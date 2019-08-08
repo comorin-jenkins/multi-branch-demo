@@ -1,4 +1,4 @@
 #!/bin/bash
-echo "welcome to multi-branch-project-demo..."
-pwd
+echo "welcome to multi-branch-project-demo....."
+
 
